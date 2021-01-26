@@ -7,9 +7,12 @@ namespace Exercise3.Tests
 {
     public class PersonTests
     {
+        Person person = null;
+
         [SetUp]
         public void Setup()
         {
+            person = new Person("Kalle", "Andersson");
         }
 
         /// <summary>
@@ -20,8 +23,7 @@ namespace Exercise3.Tests
         public void Person_Constructor_Get_FName_LName_Name_Test()
         {
             // Arrange
-            // expected
-            Person person = new Person("Kalle", "Andersson");
+            // expected            
 
             // Act
             // actual
@@ -44,7 +46,6 @@ namespace Exercise3.Tests
         {
             // Arrange
             // expected
-            Person person = new Person("Kalle", "Andersson");
             person.Age = 33;
             person.Height = 178.50;
             person.Weight = 78.50;
@@ -74,7 +75,6 @@ namespace Exercise3.Tests
         {
             // Arrange
             // expected
-            Person person = new Person("Kalle", "Andersson");
             person.FName = "Stina";
 
             // Act
@@ -93,7 +93,6 @@ namespace Exercise3.Tests
         {
             // Arrange
             // expected
-            Person person = new Person("Kalle", "Andersson");
 
             // Act
             // actual
@@ -111,7 +110,6 @@ namespace Exercise3.Tests
         {
             // Arrange
             // expected
-            Person person = new Person("Kalle", "Andersson");
 
             // Act
             // actual
@@ -129,7 +127,6 @@ namespace Exercise3.Tests
         {
             // Arrange
             // expected
-            Person person = new Person("Kalle", "Andersson");
 
             // Act
             // actual
@@ -151,7 +148,6 @@ namespace Exercise3.Tests
         {
             // Arrange
             // expected
-            Person person = new Person("Kalle", "Andersson");
             person.LName = "Nilsson";
 
             // Act
@@ -170,7 +166,6 @@ namespace Exercise3.Tests
         {
             // Arrange
             // expected
-            Person person = new Person("Kalle", "Andersson");
 
             // Act
             // actual
@@ -188,7 +183,6 @@ namespace Exercise3.Tests
         {
             // Arrange
             // expected
-            Person person = new Person("Kalle", "Andersson");
 
             // Act
             // actual
@@ -206,7 +200,6 @@ namespace Exercise3.Tests
         {
             // Arrange
             // expected
-            Person person = new Person("Kalle", "Andersson");
 
             // Act
             // actual
@@ -228,7 +221,6 @@ namespace Exercise3.Tests
         {
             // Arrange
             // expected
-            Person person = new Person("Kalle", "Andersson");
             person.Age = 123;
 
             // Act
@@ -247,7 +239,6 @@ namespace Exercise3.Tests
         {
             // Arrange
             // expected
-            Person person = new Person("Kalle", "Andersson");
 
             // Act
             // actual
@@ -269,7 +260,6 @@ namespace Exercise3.Tests
         {
             // Arrange
             // expected
-            Person person = new Person("Kalle", "Andersson");
             person.Height = 123.45;
 
             // Act
@@ -293,7 +283,6 @@ namespace Exercise3.Tests
         {
             // Arrange
             // expected
-            Person person = new Person("Kalle", "Andersson");
             person.Weight = 123.45;
 
             // Act
@@ -317,7 +306,6 @@ namespace Exercise3.Tests
         {
             // Arrange
             // expected
-            Person person = new Person("Kalle", "Andersson");
 
             // Act
             // actual

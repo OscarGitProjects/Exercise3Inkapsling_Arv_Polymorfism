@@ -22,7 +22,7 @@ namespace Exercise3Inkapsling_Arv_Polymorfism
             set 
             {
                 if (value <= 0)
-                    throw new ArgumentException("Person -> Age. Ålder måste vara större än 0");
+                    throw new ArgumentException("Person->Age. Ålder måste vara större än 0");
 
                 iAge = value; 
             }
@@ -44,13 +44,10 @@ namespace Exercise3Inkapsling_Arv_Polymorfism
                 int? iLength = value?.Length;
 
                 if (!iLength.HasValue)
-                    throw new ArgumentNullException("Person -> FName. FName är obligatoriskt.");
+                    throw new ArgumentNullException("Person->FName. FName är obligatoriskt.");
 
-                if (iLength.Value < 2)
-                    throw new ArgumentException("Person -> FName. FName måste vara mellan 2 och 10 tecken.");
-
-                if (iLength.Value > 10)
-                    throw new ArgumentException("Person -> FName. FName måste vara mellan 2 och 10 tecken.");
+                if (iLength.Value < 2 || iLength.Value > 10)
+                    throw new ArgumentException("Person->FName. FName måste vara mellan 2 och 10 tecken.");
 
                 strFname = value; 
             }
@@ -73,13 +70,11 @@ namespace Exercise3Inkapsling_Arv_Polymorfism
                 int? iLength = value?.Length;
 
                 if (!iLength.HasValue)
-                    throw new ArgumentNullException("Person -> LName. LName är obligatoriskt.");
+                    throw new ArgumentNullException("Person->LName. LName är obligatoriskt.");
 
-                if (iLength.Value < 3)
-                    throw new ArgumentException("Person -> LName. LName måste vara mellan 3 och 15 tecken.");
+                if (iLength.Value < 3 || iLength.Value > 15)
+                    throw new ArgumentException("Person->LName. LName måste vara mellan 3 och 15 tecken.");
 
-                if (iLength.Value > 15)
-                    throw new ArgumentException("Person -> LName. LName måste vara mellan 3 och 15 tecken.");
 
                 strLName = value;
             }
