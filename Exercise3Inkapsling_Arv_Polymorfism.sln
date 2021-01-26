@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise3Inkapsling_Arv_Polymorfism", "Exercise3Inkapsling_Arv_Polymorfism\Exercise3Inkapsling_Arv_Polymorfism.csproj", "{B5B5F4DD-CE7D-4E7E-8B7E-A3979FF9F5CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise3.Tests", "Exercise3.Tests\Exercise3.Tests.csproj", "{7939A67F-6761-4B86-9DE5-167A6C5B25EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B5B5F4DD-CE7D-4E7E-8B7E-A3979FF9F5CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5B5F4DD-CE7D-4E7E-8B7E-A3979FF9F5CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5B5F4DD-CE7D-4E7E-8B7E-A3979FF9F5CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7939A67F-6761-4B86-9DE5-167A6C5B25EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7939A67F-6761-4B86-9DE5-167A6C5B25EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7939A67F-6761-4B86-9DE5-167A6C5B25EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7939A67F-6761-4B86-9DE5-167A6C5B25EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
