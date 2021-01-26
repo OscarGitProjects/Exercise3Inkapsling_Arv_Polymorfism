@@ -20,12 +20,21 @@ namespace Exercise3Inkapsling_Arv_Polymorfism
         {
             Console.WriteLine("Run porgram!");
 
-            Person person = new Person("Kalle", "Andersson");
-            person.Age = 33;
-            person.Height = 175.5;
-            person.Weight = 83.5;
+            Person person = null;
 
-            Console.WriteLine(person);
+            try
+            {
+                person = new Person("Kalle", "Andersson");
+                person.Age = 33;
+                person.Height = 175.5;
+                person.Weight = 83.5;
+
+                Console.WriteLine(person);
+            }
+            catch(Exception exc)
+            {
+                Console.WriteLine("Exception: " + exc);
+            }            
         }
     }
 }
