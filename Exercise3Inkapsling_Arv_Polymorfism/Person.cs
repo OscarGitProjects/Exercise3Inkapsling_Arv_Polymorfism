@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 
 namespace Exercise3Inkapsling_Arv_Polymorfism
@@ -45,7 +44,7 @@ namespace Exercise3Inkapsling_Arv_Polymorfism
                 int? iLength = value?.Length;
 
                 if (!iLength.HasValue)
-                    throw new ArgumentException("Person -> FName. FName är obligatoriskt.");
+                    throw new ArgumentNullException("Person -> FName. FName är obligatoriskt.");
 
                 if (iLength.Value < 2)
                     throw new ArgumentException("Person -> FName. FName måste vara mellan 2 och 10 tecken.");
@@ -74,7 +73,7 @@ namespace Exercise3Inkapsling_Arv_Polymorfism
                 int? iLength = value?.Length;
 
                 if (!iLength.HasValue)
-                    throw new ArgumentException("Person -> LName. LName är obligatoriskt.");
+                    throw new ArgumentNullException("Person -> LName. LName är obligatoriskt.");
 
                 if (iLength.Value < 3)
                     throw new ArgumentException("Person -> LName. LName måste vara mellan 3 och 15 tecken.");
@@ -96,6 +95,11 @@ namespace Exercise3Inkapsling_Arv_Polymorfism
         /// </summary>
         public double Weight { get; set; }
 
+        /// <summary>
+        /// Personens hela namn
+        /// </summary>
+        public string Name => FName + " " + LName;
+
 
         /// <summary>
         /// Konstruktor
@@ -104,8 +108,21 @@ namespace Exercise3Inkapsling_Arv_Polymorfism
         /// <param name="strLastName">Efternammn</param>
         public Person(string strFirstName, string strLastName)
         {
-
+            FName = strFirstName;
+            LName = strLastName;
         }
 
+
+        public override string ToString()
+        {
+            StringBuilder strBuilder = new StringBuilder(Name);
+            strBuilder.Append(System.Environment.NewLine);
+
+            strBuilder.Append($"Är {Age} år.");
+            strBuilder.Append($" Väger {Weight} kg."); 
+            strBuilder.Append($" Längden är {Height} cm.");
+
+            return strBuilder.ToString();
+        }
     }
 }
