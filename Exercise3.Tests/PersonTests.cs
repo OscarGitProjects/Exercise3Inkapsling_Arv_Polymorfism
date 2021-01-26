@@ -1,6 +1,7 @@
 using Exercise3Inkapsling_Arv_Polymorfism;
 using NUnit.Framework;
 using System;
+using System.Text;
 
 namespace Exercise3.Tests
 {
@@ -32,6 +33,35 @@ namespace Exercise3.Tests
             Assert.AreEqual("Kalle", strFName);
             Assert.AreEqual("Andersson", strLName);
             Assert.AreEqual("Kalle Andersson", strName);
+        }
+
+
+        /// <summary>
+        /// Metoden testar att Person objektets ToString returnerar rätt resultat
+        /// </summary>
+        [Test]
+        public void Person_ToString_Test()
+        {
+            // Arrange
+            // expected
+            Person person = new Person("Kalle", "Andersson");
+            person.Age = 33;
+            person.Height = 178.50;
+            person.Weight = 78.50;
+
+            StringBuilder strBuilder = new StringBuilder(person.Name);
+            strBuilder.Append(System.Environment.NewLine);
+            strBuilder.Append($"Är 33 år.");
+            strBuilder.Append($" Väger 78,5 kg.");
+            strBuilder.Append($" Längden är 178,5 cm.");
+            string strExpected = strBuilder.ToString();
+
+            // Act
+            // actual
+            string strActual = person.ToString();
+
+            // Assert
+            Assert.AreEqual(strExpected, strActual);
         }
 
         #region Test av property FName
