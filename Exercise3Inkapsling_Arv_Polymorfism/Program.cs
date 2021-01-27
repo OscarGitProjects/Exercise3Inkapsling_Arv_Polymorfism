@@ -11,14 +11,42 @@ namespace Exercise3Inkapsling_Arv_Polymorfism
         static void Main(string[] args)
         {
             Program program = new Program();
-            program.Run();
+
+            program.Run_CreatePersonWithPersonHandler();
+
+            //program.Run_CreatePerson();
 
             Console.ReadLine();
         }
 
-        private void Run()
+        /// <summary>
+        /// Metoden skapar en person med PersonHandler
+        /// </summary>
+        private void Run_CreatePersonWithPersonHandler()
         {
-            Console.WriteLine("Run porgram!");
+            Console.WriteLine("Run_CreatePersonWithPersonHandler!");
+
+            PersonHandler personHandler = new PersonHandler();
+            Person newPerson = null;
+
+            try
+            {
+                newPerson = personHandler.CreatePerson(33, "Sture", "Stelben", 178.5, 78.5);
+
+                Console.WriteLine(newPerson);
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine("Exception: " + exc);
+            }
+        }
+
+        /// <summary>
+        /// Metoden skapar ett Person objekt med new
+        /// </summary>
+        private void Run_CreatePerson()
+        {
+            Console.WriteLine("Run_CreatePerson!");
 
             Person person = null;
 
