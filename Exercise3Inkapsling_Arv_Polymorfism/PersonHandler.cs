@@ -9,6 +9,7 @@ namespace Exercise3Inkapsling_Arv_Polymorfism
     {
         /// <summary>
         /// Metoden sätter age i Person objektet
+        /// Validering av indata sker i Person objektets set properties
         /// </summary>
         /// <param name="person">Person objekt som skall uppdateras</param>
         /// <param name="iAge">Nya ålderna</param>
@@ -19,10 +20,17 @@ namespace Exercise3Inkapsling_Arv_Polymorfism
             if (person == null)
                 throw new ArgumentNullException("PersonHandler->SetAge(). Person referensen är null");
 
-            if(iAge <= 0)
-                throw new ArgumentException("PersonHandler->SetAge(). Ålder måste vara större än 0");
+            //if(iAge <= 0)
+            //    throw new ArgumentException("PersonHandler->SetAge(). Ålder måste vara större än 0");
 
-            person.Age = iAge;
+            try
+            {
+                person.Age = iAge;
+            }
+            catch(Exception)
+            {
+                throw;
+            }
         }
 
 
@@ -58,6 +66,7 @@ namespace Exercise3Inkapsling_Arv_Polymorfism
 
         /// <summary>
         /// Metoden uppdaterar en Person's för- och efternamn
+        /// Validering av indata sker i Person objektets set properties
         /// </summary>
         /// <param name="person">Person objektet som skall uppdateras</param>
         /// <param name="strFName">Personens förnamn. Måste vara mellan 2 och 10 tecken</param>
@@ -69,6 +78,7 @@ namespace Exercise3Inkapsling_Arv_Polymorfism
             if (person == null)
                 throw new ArgumentNullException("PersonHandler->SetName(). Person referensen är null");
 
+            /*
             if (String.IsNullOrWhiteSpace(strFName))
                 throw new ArgumentNullException("PersonHandler->SetName(). FName är obligatoriskt.");
 
@@ -79,16 +89,23 @@ namespace Exercise3Inkapsling_Arv_Polymorfism
                 throw new ArgumentNullException("PersonHandler->SetName(). LName är obligatoriskt.");
 
             if (strLName.Length < 3 || strLName.Length > 15)
-                throw new ArgumentException("PersonHandler->SetName(). LName måste vara mellan 3 och 15 tecken.");
+                throw new ArgumentException("PersonHandler->SetName(). LName måste vara mellan 3 och 15 tecken.");*/
 
-
-            person.FName = strFName;
-            person.LName = strLName;
+            try
+            {
+                person.FName = strFName;
+                person.LName = strLName;
+            }
+            catch(Exception)
+            {
+                throw;
+            }
         }
 
 
         /// <summary>
         /// Metoden skapar ett nytt Person objekt
+        /// Validering av indata sker i Person objektets set properties
         /// </summary>
         /// <param name="iAge">Personens ålder. Måste vara större än 0</param>
         /// <param name="strFName">Personens förnamn. Måste vara mellan 2 och 10 tecken</param>
@@ -99,7 +116,8 @@ namespace Exercise3Inkapsling_Arv_Polymorfism
         /// <exception cref="ArgumentException">Kastas om ålder inte är större än 0. Kastas om förnamnet inte är mellan 2 och 10 tecken. Kastas om efternamnet inte är mellan 3 och 15 tecken</exception>
         /// <exception cref="ArgumentNullException">Kastas om förnamnet är null eller en tom sträng. Kastas om efternamnet är null eller tom sträng</exception>
         public Person CreatePerson(int iAge, string strFName, string strLName, double dblHeight, double dblWeight)
-        {            
+        {      
+            /*
             // Validera att indata är korrekt
             if (iAge <= 0)
                 throw new ArgumentException("PersonHandler->CreatePerson(). Ålder måste vara större än 0");
@@ -114,13 +132,21 @@ namespace Exercise3Inkapsling_Arv_Polymorfism
                 throw new ArgumentNullException("PersonHandler->CreatePerson(). LName är obligatoriskt.");
 
             if (strLName.Length < 3 || strLName.Length > 15)
-                throw new ArgumentException("PersonHandler->CreatePerson(). LName måste vara mellan 3 och 15 tecken.");
+                throw new ArgumentException("PersonHandler->CreatePerson(). LName måste vara mellan 3 och 15 tecken.");*/
 
-            // Vi har korrekt indata. Skapa ett nytt Person objekt
-            Person newPerson = new Person(strFName, strLName);
-            newPerson.Age = iAge;
-            newPerson.Height = dblHeight;
-            newPerson.Weight = dblWeight;
+            Person newPerson = null;
+            try
+            {
+                // Skapa ett nytt Person objekt
+                newPerson = new Person(strFName, strLName);
+                newPerson.Age = iAge;
+                newPerson.Height = dblHeight;
+                newPerson.Weight = dblWeight;
+            }
+            catch(Exception)
+            {
+                throw;
+            }
 
             return newPerson;
         }

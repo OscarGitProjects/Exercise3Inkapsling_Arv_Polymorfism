@@ -18,7 +18,7 @@ namespace Exercise3Inkapsling_Arv_Polymorfism
     /// 
     /// Vilken typ måste listan vara för att alla klasser skall kunna lagras tillsammans?   En lista av basklassen Animal
     /// 
-    /// Förklara vad det är som händer. Vi anropar den första Stats metoden som finns i klass hierarkin. dvs. i bland kan det bli den som finns i basklassen Animal
+    /// Förklara vad det är som händer. Vi anropar den första Stats metoden som finns i klass hierarkin. dvs. ibland kan det bli den som finns i basklassen Animal
     /// 
     /// Kommer du åt den metoden från Animals listan?   Nej
     /// Varför inte?    För att man inte automatiskt kan casta från basklassen ner till subklassen dog. Man kan göra Dog dog = (Dog)animal
